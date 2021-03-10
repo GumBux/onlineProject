@@ -96,6 +96,7 @@ def main_loop(name):
 def start():
     name = get_name()
     print("")
+    print("")
     welcome_message(name)
 
     main_loop(name)
