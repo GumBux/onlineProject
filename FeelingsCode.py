@@ -3,7 +3,7 @@ import tkinter
 
 
 def get_name():
-    """Gets the users name and returns it when called"""
+    # Gets the users name and returns it when called
     name = input('Enter your name: ')
     if name == "":
         print("Please enter your name, you cannot leave it blank!")
@@ -14,7 +14,7 @@ def get_name():
 
 
 def welcome_message(name):
-    """This runs the welcome message and explains what is happening"""
+    # This runs the welcome message and explains what is happening
     name_ = name
     print("Hello, " + name_ + "! \nWelcome to the feelings generator!")
     print()
@@ -23,7 +23,7 @@ def welcome_message(name):
 
 
 def main_loop(name):
-    """This runs the main loop and handles feelings"""
+    # This runs the main loop and handles feelings
     print()
     print('''
     *********************
@@ -53,6 +53,7 @@ def main_loop(name):
 
     persons_feeling = input('Enter the feeling that\'s closest to how you are feeling: ')
 
+    # Deals with the persons answers
     if 'happy' in persons_feeling.lower() or persons_feeling.lower() == 'a':
         print()
         print(quotes_happy[random.randint(0, len(quotes_happy) - 1)])
@@ -75,6 +76,7 @@ def main_loop(name):
 
 
 def main():
+    # Runs all of the functions
     name_ = get_name()
     welcome_message(name_)
     main_loop(name_)
