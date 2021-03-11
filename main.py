@@ -1,6 +1,8 @@
 import random
 import tkinter
 
+tk = tkinter.Tk()
+
 
 def get_name():
     # Gets the users name and returns it when called
