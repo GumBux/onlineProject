@@ -1,4 +1,5 @@
 import random
+import tkinter
 
 
 def get_name():
@@ -6,6 +7,7 @@ def get_name():
     name = input('Enter your name: ')
     if name == "":
         print("Please enter your name, you cannot leave it blank!")
+        print()
         get_name()
 
     return name
@@ -22,6 +24,7 @@ def welcome_message(name):
 
 def main_loop(name):
     """This runs the main loop and handles feelings"""
+    print()
     print('''
     *********************
     *** Feelings Menu ***
@@ -36,30 +39,45 @@ def main_loop(name):
     *********************
     ''')
 
-    quotes_sad = ['Quote1_sad', 'Quote2_sad', 'Quote3_sad']
-    quotes_happy = ['Quote1_happy', 'Quote2_happy', 'Quote3_happy']
-    quotes_angry = ['Quote1_angry', 'Quote2_angry', 'Quote3_angry']
+    quotes_sad = ['Things change. And friends leave. Life doesn\'t stop for anybody.',
+                  'Breathing is hard. When you cry so much, it makes you realize that breathing is hard.',
+                  'You cannot protect yourself from sadness without protecting yourself from happiness.']
+
+    quotes_happy = ['Be healthy and take care of yourself, but be happy with the beautiful things that make you, you.',
+                    'The biggest adventure you can ever take is to live the life of your dreams.',
+                    'Beauty is everywhere. You only have to look to see it.']
+
+    quotes_angry = ['Never go to bed mad. Stay up and fight.',
+                    'Don’t waste your time in anger, regrets, worries, and grudges. Life is too short to be unhappy.',
+                    'The best fighter is never angry.']
 
     persons_feeling = input('Enter the feeling that\'s closest to how you are feeling: ')
 
     if 'happy' in persons_feeling.lower() or persons_feeling.lower() == 'a':
+        print()
         print(quotes_happy[random.randint(0, len(quotes_happy) - 1)])
+
     elif 'sad' in persons_feeling.lower() or persons_feeling.lower() == 'b':
+        print()
         print(quotes_sad[random.randint(0, len(quotes_sad) - 1)])
+
     elif 'angry' in persons_feeling.lower() or persons_feeling.lower() == 'c':
+        print()
         print(quotes_angry[random.randint(0, len(quotes_angry) - 1)])
+
     elif persons_feeling == "":
         print("Please enter a feeling, you cannot leave it empty!")
         main_loop(name)
+
     else:
         print("Sorry, the generator doesn't quite understand that!")
         main_loop(name)
 
 
 def main():
-    user_name = get_name()
-    welcome_message(user_name)
-    main_loop(user_name)
+    name_ = get_name()
+    welcome_message(name_)
+    main_loop(name_)
 
 
 main()
